@@ -1,6 +1,6 @@
 
 @import "./foundation-settings";
-@import "~foundation-sites/scss/foundation";
+@import "./node_modules/foundation-sites/scss/foundation";
 
 @include foundation-everything(true);
 
@@ -18,8 +18,13 @@
 
 @import "./markdown";
 @import "./notifications";
-@import "src/app/components/all";
+//@import "src/app/components/all";
 
+
+#steemit-article{
+  max-width: 700px;
+  margin: 0 auto;
+}
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   body {
