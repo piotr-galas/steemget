@@ -2,10 +2,11 @@ class Steemget {
   constructor(options){
     this.mapOptions(options);
     this.includeAssets();
+    this.includeRelCanonical(options);
     this.importArticle();
   }
 
-  createHtmlTree(articleContentInHtml){
+  static createHtmlTree(articleContentInHtml){
     const baseNode = document.getElementById('steemit-article');
     const outerNode = document.createElement('div');
     const innerNode = document.createElement('div');
@@ -17,10 +18,24 @@ class Steemget {
   }
 
   mapOptions(options){
+    this.relCanonical = options.relCanonical;
+    this.relCanonicalHost = options.relCanonicalHost || 'https://steemit.com';
     this.permalink = options.permalink;
     this.author = options.author;
     this.errorMessage = options.errorMessage ||
       `Content not find,  are you sure that there is article in <a href="https://steemit.com/@${this.author}/${this.permalink}">https://steemit.com/@${this.author}/${this.permalink} </a>`;
+  }
+
+  includeRelCanonical(){
+   if(this.relCanonical !== false){
+     return new Promise( resolve => {
+       const link = document.createElement( "link" );
+       link.rel = 'canonical';
+       link.href = `${this.relCanonicalHost}/@${this.author}/${this.permalink}`;
+       link.onload = resolve;
+       document.head.appendChild( link );
+     });
+   }
   }
 
   includeAssets(){
@@ -54,10 +69,10 @@ class Steemget {
     onload = ()=>{
       steem.api.getContent(this.author, this.permalink, (err, result) =>{
         if(result.id === 0){
-          this.createHtmlTree(this.errorMessage);
+          Steemget.createHtmlTree(this.errorMessage);
         }else{
           const converter = new showdown.Converter();
-          this.createHtmlTree(converter.makeHtml(result.body));
+          Steemget.createHtmlTree(converter.makeHtml(result.body));
         }
       });
     }
