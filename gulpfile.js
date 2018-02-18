@@ -1,8 +1,8 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sequence = require('run-sequence');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sequence = require('run-sequence');
 
 gulp.task('sass', function () {
   return gulp.src('./dev/stylesheets/app.scss')

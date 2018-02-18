@@ -1,4 +1,6 @@
-class Steemget {
+class Steemget{
+
+
   constructor(options){
     this.mapOptions(options);
     this.includeAssets();
@@ -41,7 +43,7 @@ class Steemget {
   includeAssets(){
     this.includeJs('https://cdn.steemjs.com/lib/latest/steem.min.js');
     this.includeJs('https://cdn.rawgit.com/showdownjs/showdown/1.8.5/dist/showdown.min.js');
-    this.includeCss('css/app.css?v=1.0');
+    this.includeCss(`${document.currentScript.src}/css/app.css`);
     this.includeCss('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
     this.includeCss('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600')
   }

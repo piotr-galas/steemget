@@ -9,7 +9,7 @@ Steemget is small js library that allow you to include article from Steemit on y
 
 ### How to use it?
 
-To include your article from Steemit on your web page, just copy and paste code snipped show below, just before close body tag.
+To include your article from Steemit on your web page, copy and paste code snipped show below, just before close body tag.
 
 ```html
 <body>
@@ -43,13 +43,13 @@ You need also provide your username and article permalink. E.g. above options ar
 |---------------------------|-------------------|-------------|
 | **author**                | author of article |  no default |
 | **permalink**             | end part of link to article |  no default |
-| **relCanonical**          | `true` or `false` (if true then it append relCanonical). It is to tell google about duplicated content    |  true       |
+| **relCanonical**          | `true` or `false` (if true then it append relCanonical). It is to tell google about duplicated content    |  `true`       |
 | **errorMessage**          | error message when article not found | Content not find,  are you sure that there is article in..  |
 
 
 ### Run project locally
 
-Todo
+To run project locally
 
 ### Contributions
 
