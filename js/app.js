@@ -1,6 +1,4 @@
 class Steemget{
-
-
   constructor(options){
     this.mapOptions(options);
     this.includeAssets();

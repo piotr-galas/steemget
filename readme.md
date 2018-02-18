@@ -22,7 +22,7 @@ To include your article from Steemit on your web page, copy and paste code snipp
     ....
 
 
-    <script src="https://cdn.jsdelivr.net/npm/steemget@0.1.0/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/steemget/js/app.js"></script>
     <script>
         new Steemget({
           author: 'piotr-galas',
@@ -34,8 +34,10 @@ To include your article from Steemit on your web page, copy and paste code snipp
 ```
 
 Content of article will be placed inside of `<div id="steemit-article" ></div>`
-You need also provide your username and article permalink. E.g. above options are related to:
- [https://steemit.com/polish/@piotr-galas/o-continuous-integration](https://steemit.com/polish/@piotr-galas/o-continuous-integration)
+You need also provide your username and article permalink like example above.
+
+------
+Example above will show: [https://steemit.com/polish/@piotr-galas/o-continuous-integration](https://steemit.com/polish/@piotr-galas/o-continuous-integration)
  
 ### Options:
 
@@ -49,9 +51,31 @@ You need also provide your username and article permalink. E.g. above options ar
 
 ### Run project locally
 
-To run project locally
+To run project locally you need to have node.js and npm installed
 
-### Contributions
+- `git clone git@github.com:piotr-galas/steemget.git`
+- `cd steemget`
+- `npm install`
+- `npm start`
 
-Todo
+Browser should open automatically. 
+
+Do not modify `css/app.css` directly. This file is generated from scss located in dev and will be override every time you modify one of .scss file.
+
+
+### Contributing
+
+Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration.
+
+### Features todo:
+
+ - allow to modify some minor css from object configuration
+ - add optional link to article in steemit
+ - add optional widget with number of likes, estimated value in USD 
+
+### License
+
+This package is available as open source under the terms of the MIT License.
+
+
 

@@ -3,6 +3,15 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sequence = require('run-sequence');
+const webserver = require('gulp-webserver');
+
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      livereload: true,
+      open: true
+    }));
+});
 
 gulp.task('sass', function () {
   return gulp.src('./dev/stylesheets/app.scss')
@@ -17,6 +26,7 @@ gulp.task('sass:watch', function () {
 gulp.task('dev', () => {
   sequence(
     'sass',
-    'sass:watch'
+    'sass:watch',
+    'webserver'
   )
 });
