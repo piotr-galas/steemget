@@ -22,13 +22,16 @@ To include your article from Steemit on your web page, copy and paste code snipp
     ....
 
 
-    <script src="https://cdn.jsdelivr.net/npm/steemget/js/app.js"></script>
     <script>
+      document.addEventListener("DOMContentLoaded", function() {
         new Steemget({
           author: 'piotr-galas',
           permalink: 'o-continuous-integration'
         })
+      });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/steemget@0.1.2/js/app.js"></script>
 </body>
 
 ```
@@ -72,6 +75,7 @@ Bug reports and pull requests are welcome. This project is intended to be a safe
  - allow to modify some minor css from object configuration
  - add optional link to article in steemit
  - add optional widget with number of likes, estimated value in USD 
+ - prepare web page with documentation for this package
 
 ### License
 

@@ -9,12 +9,16 @@
 <body>
     <div id="steemit-article" ></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/steemget/js/app.js"></script>
     <script>
+      document.addEventListener("DOMContentLoaded", function() {
         new Steemget({
           author: 'piotr-galas',
           permalink: 'o-continuous-integration'
         })
+      });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/steemget@0.1.2/js/app.js"></script>
+
 </body>
 </html>
